@@ -1,0 +1,23 @@
+# Dependencies (only if you ever add a local tool like `serve`)
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-error.log*
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs & temp
+*.log
+.cache/
+.tmp/
+
+# Local env / secrets (none used today, but never commit them)
+.env
+.env.*

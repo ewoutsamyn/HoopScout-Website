@@ -1,0 +1,54 @@
+<svg viewBox="0 0 320 692" xmlns="http://www.w3.org/2000/svg" font-family="'Barlow Semi Condensed','Barlow',sans-serif" role="img" aria-label="HoopScout shot confirm sheet preview">
+  <defs><clipPath id="scr2"><rect width="320" height="692"/></clipPath></defs>
+  <g clip-path="url(#scr2)">
+    <rect width="320" height="692" fill="#0B0D10"/>
+
+    <!-- header band + score bar -->
+    <rect width="320" height="150" fill="#151920"/>
+    <text x="20" y="34" fill="#8A93A2" font-size="12" letter-spacing="1.5">LIVE · Q3</text>
+    <text x="20" y="86" fill="#E8ECF2" font-size="15" font-weight="700">HAWKS</text>
+    <text x="20" y="126" fill="#F2790A" font-size="46" font-weight="700" font-variant="tabular-nums">58</text>
+    <rect x="118" y="74" width="84" height="46" rx="12" fill="#1E232B" stroke="#232833"/>
+    <text x="160" y="94" fill="#E8ECF2" font-size="17" font-weight="700" text-anchor="middle" font-variant="tabular-nums">6:24</text>
+    <text x="160" y="112" fill="#8A93A2" font-size="10" text-anchor="middle" letter-spacing="1">PAUSED</text>
+    <text x="300" y="86" fill="#E8ECF2" font-size="15" font-weight="700" text-anchor="end">EAGLES</text>
+    <text x="300" y="126" fill="#E8ECF2" font-size="46" font-weight="700" text-anchor="end" font-variant="tabular-nums">51</text>
+
+    <!-- dimmed cards + grid -->
+    <g opacity="0.35">
+      <g transform="translate(14,172)"><rect width="52" height="70" rx="10" fill="#141821" stroke="#232833"/></g>
+      <g transform="translate(72,172)"><rect width="52" height="70" rx="10" fill="#141821" stroke="#232833"/></g>
+      <g transform="translate(130,172)"><rect width="52" height="70" rx="10" fill="#141821" stroke="#232833"/></g>
+      <g transform="translate(188,172)"><rect width="52" height="70" rx="10" fill="#141821" stroke="#232833"/></g>
+      <g transform="translate(246,172)"><rect width="52" height="70" rx="10" fill="#141821" stroke="#232833"/></g>
+      <g transform="translate(14,262)"><rect width="66" height="56" rx="12" fill="#1E232B"/></g>
+      <g transform="translate(88,262)"><rect width="66" height="56" rx="12" fill="#1E232B"/></g>
+      <g transform="translate(162,262)"><rect width="66" height="56" rx="12" fill="#1E232B"/></g>
+      <g transform="translate(236,262)"><rect width="66" height="56" rx="12" fill="#1E232B"/></g>
+    </g>
+
+    <!-- scrim -->
+    <rect width="320" height="692" fill="#000" opacity="0.45"/>
+
+    <!-- shot-confirm sheet -->
+    <g transform="translate(0,398)">
+      <rect width="320" height="294" rx="24" fill="#141821" stroke="#232833"/>
+      <rect x="140" y="16" width="40" height="5" rx="2.5" fill="#2A2F3A"/>
+      <text x="160" y="58" fill="#8A93A2" font-size="12" text-anchor="middle" letter-spacing="1.5">#23 HALL · SMALL FORWARD</text>
+      <text x="160" y="92" fill="#E8ECF2" font-size="24" font-weight="700" text-anchor="middle">3-Point Shot</text>
+
+      <g transform="translate(28,120)">
+        <rect width="120" height="120" rx="18" fill="#F2790A"/>
+        <path d="M40 62 L54 78 L82 44" stroke="#06171A" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="60" y="106" fill="#06171A" font-size="16" font-weight="700" text-anchor="middle">MAKE</text>
+      </g>
+      <g transform="translate(172,120)">
+        <rect width="120" height="120" rx="18" fill="#1E232B" stroke="#2A2F3A"/>
+        <path d="M42 46 L78 82 M78 46 L42 82" stroke="#8A93A2" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <text x="60" y="106" fill="#C6CDD8" font-size="16" font-weight="700" text-anchor="middle">MISS</text>
+      </g>
+    </g>
+
+    <rect x="120" y="672" width="80" height="5" rx="2.5" fill="#2A2F3A"/>
+  </g>
+</svg>

@@ -1,0 +1,77 @@
+<svg viewBox="0 0 320 692" xmlns="http://www.w3.org/2000/svg" font-family="'Barlow Semi Condensed','Barlow',sans-serif" role="img" aria-label="HoopScout shot zones heatmap preview">
+  <defs>
+    <clipPath id="scr3"><rect width="320" height="692"/></clipPath>
+    <clipPath id="court"><rect x="24" y="150" width="272" height="330" rx="14"/></clipPath>
+    <radialGradient id="hot"><stop offset="0%" stop-color="#E5484D" stop-opacity="0.85"/><stop offset="100%" stop-color="#E5484D" stop-opacity="0"/></radialGradient>
+    <radialGradient id="warm"><stop offset="0%" stop-color="#F2790A" stop-opacity="0.8"/><stop offset="100%" stop-color="#F2790A" stop-opacity="0"/></radialGradient>
+    <radialGradient id="cold"><stop offset="0%" stop-color="#3B82F6" stop-opacity="0.75"/><stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/></radialGradient>
+  </defs>
+  <g clip-path="url(#scr3)">
+    <rect width="320" height="692" fill="#0B0D10"/>
+
+    <!-- header -->
+    <rect width="320" height="112" fill="#151920"/>
+    <text x="20" y="46" fill="#E8ECF2" font-size="20" font-weight="700">Game Report</text>
+    <!-- tabs -->
+    <g transform="translate(20,64)">
+      <rect width="90" height="34" rx="9" fill="none" stroke="#232833"/><text x="45" y="22" fill="#8A93A2" font-size="12" text-anchor="middle">Report</text>
+      <rect x="96" width="90" height="34" rx="9" fill="none" stroke="#232833"/><text x="141" y="22" fill="#8A93A2" font-size="12" text-anchor="middle">Game Log</text>
+      <rect x="192" width="88" height="34" rx="9" fill="rgba(242,121,10,0.16)" stroke="#F2790A"/><text x="236" y="22" fill="#F2790A" font-size="12" font-weight="700" text-anchor="middle">Shot Zones</text>
+    </g>
+
+    <!-- court -->
+    <rect x="24" y="150" width="272" height="330" rx="14" fill="#10141A" stroke="#232833"/>
+    <g clip-path="url(#court)">
+      <!-- heat blobs -->
+      <circle cx="160" cy="210" r="70" fill="url(#hot)"/>
+      <circle cx="232" cy="250" r="60" fill="url(#warm)"/>
+      <circle cx="86" cy="270" r="58" fill="url(#cold)"/>
+      <circle cx="160" cy="360" r="66" fill="url(#warm)"/>
+      <circle cx="250" cy="360" r="52" fill="url(#cold)"/>
+      <circle cx="70" cy="380" r="50" fill="url(#hot)"/>
+
+      <!-- court lines (hoop at top) -->
+      <g stroke="#5A6675" stroke-width="2" fill="none" opacity="0.9">
+        <!-- baseline -->
+        <line x1="24" y1="170" x2="296" y2="170"/>
+        <!-- backboard + hoop -->
+        <line x1="140" y1="182" x2="180" y2="182"/>
+        <circle cx="160" cy="192" r="7"/>
+        <!-- lane -->
+        <rect x="122" y="170" width="76" height="120"/>
+        <!-- free-throw circle -->
+        <path d="M122 290 A 38 38 0 0 0 198 290"/>
+        <path d="M122 290 A 38 38 0 0 1 198 290" stroke-dasharray="5 5"/>
+        <!-- three-point: corners then arc -->
+        <line x1="48" y1="170" x2="48" y2="238"/>
+        <line x1="272" y1="170" x2="272" y2="238"/>
+        <path d="M48 238 A 138 138 0 0 0 272 238"/>
+      </g>
+    </g>
+
+    <!-- zone badges -->
+    <g font-size="11" font-weight="700" text-anchor="middle">
+      <g transform="translate(160,214)"><rect x="-27" y="-15" width="54" height="30" rx="8" fill="#0B0D10" stroke="#232833"/><text y="-2" fill="#E8ECF2">12/19</text><text y="10" fill="#E5484D">63%</text></g>
+      <g transform="translate(236,252)"><rect x="-27" y="-15" width="54" height="30" rx="8" fill="#0B0D10" stroke="#232833"/><text y="-2" fill="#E8ECF2">6/13</text><text y="10" fill="#F2790A">46%</text></g>
+      <g transform="translate(80,268)"><rect x="-27" y="-15" width="54" height="30" rx="8" fill="#0B0D10" stroke="#232833"/><text y="-2" fill="#E8ECF2">2/9</text><text y="10" fill="#3B82F6">22%</text></g>
+      <g transform="translate(250,360)"><rect x="-27" y="-15" width="54" height="30" rx="8" fill="#0B0D10" stroke="#232833"/><text y="-2" fill="#E8ECF2">1/6</text><text y="10" fill="#3B82F6">17%</text></g>
+      <g transform="translate(70,384)"><rect x="-27" y="-15" width="54" height="30" rx="8" fill="#0B0D10" stroke="#232833"/><text y="-2" fill="#E8ECF2">4/7</text><text y="10" fill="#E5484D">57%</text></g>
+    </g>
+
+    <!-- footer stat row -->
+    <g transform="translate(24,502)">
+      <rect width="272" height="150" rx="14" fill="#141821" stroke="#232833"/>
+      <text x="20" y="34" fill="#8A93A2" font-size="12" letter-spacing="1">TEAM SHOOTING</text>
+      <g font-weight="700" text-anchor="middle">
+        <text x="66" y="82" fill="#F2790A" font-size="30" font-variant="tabular-nums">48%</text>
+        <text x="66" y="104" fill="#8A93A2" font-size="11">FG</text>
+        <text x="136" y="82" fill="#E8ECF2" font-size="30" font-variant="tabular-nums">36%</text>
+        <text x="136" y="104" fill="#8A93A2" font-size="11">3PT</text>
+        <text x="206" y="82" fill="#E8ECF2" font-size="30" font-variant="tabular-nums">78%</text>
+        <text x="206" y="104" fill="#8A93A2" font-size="11">FT</text>
+      </g>
+    </g>
+
+    <rect x="120" y="672" width="80" height="5" rx="2.5" fill="#2A2F3A"/>
+  </g>
+</svg>

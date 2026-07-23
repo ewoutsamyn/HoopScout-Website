@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HoopScout — Courtside basketball stats for the solo coach</title>
+  <meta name="description" content="HoopScout turns one coach and one phone into a full stats crew — live courtside tracking, shot-zone heatmaps and pro-grade box scores. Coming soon to iOS & Android." />
+  <meta name="theme-color" content="#0B0D10" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="HoopScout — the scout in your pocket" />
+  <meta property="og:description" content="Live courtside stat tracking, shot-zone heatmaps and pro-grade reports. One coach, one phone. Coming soon to iOS & Android." />
+  <meta property="og:image" content="assets/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+
+  <!-- Set theme before paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('hs-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav" data-reveal-instant>
+    <div class="wrap nav__inner">
+      <a class="brand" href="#top" aria-label="HoopScout home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="48" cy="46" r="33" fill="#F4821F"/>
+            <line x1="48" y1="13" x2="48" y2="79" stroke="#0D1B2A" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M 20,24 Q 46,46 20,68" stroke="#0D1B2A" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+            <path d="M 76,24 Q 50,46 76,68" stroke="#0D1B2A" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+            <circle cx="76" cy="76" r="15" fill="rgba(255,255,255,0.10)" stroke="#fff" stroke-width="5"/>
+            <line x1="87" y1="87" x2="96" y2="96" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__word">HoopScout</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav__actions">
+        <span class="chip chip--soon">Coming soon</span>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="currentColor"/></svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5 5l1.9 1.9M17.1 17.1 19 19M19 5l-1.9 1.9M6.9 17.1 5 19"/></g></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="hero__glow hero__glow--1"></span>
+        <span class="hero__glow hero__glow--2"></span>
+        <svg class="hero__court" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice">
+          <g fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="640" cy="640" r="300"/>
+            <circle cx="640" cy="640" r="200"/>
+            <circle cx="640" cy="640" r="100"/>
+            <path d="M340 640a300 300 0 0 0 600 0"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="wrap hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow reveal">Courtside stats for the solo coach</p>
+          <h1 class="hero__title reveal" data-reveal-delay="1">
+            The whole game,<br />in <span class="accent">one thumb.</span>
+          </h1>
+          <p class="hero__sub reveal" data-reveal-delay="2">
+            HoopScout turns one coach and one phone into a full stats crew —
+            live tracking, shot-chart heatmaps and pro-grade box scores,
+            all without ever leaving the bench.
+          </p>
+
+          <div class="hero__cta reveal" data-reveal-delay="3">
+            <div class="badges">
+              <span class="store-badge" role="img" aria-label="Coming soon on the App Store" title="Coming soon">
+                <svg class="store-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.9c0-2 1.6-3 1.7-3-1-1.4-2.4-1.6-2.9-1.6-1.2-.1-2.4.7-3 .7-.6 0-1.6-.7-2.6-.7-1.3 0-2.6.8-3.2 2-1.4 2.4-.4 6 1 8 .7 1 1.4 2 2.4 2 1 0 1.3-.6 2.5-.6s1.5.6 2.5.6 1.7-1 2.3-2c.7-1.1 1-2.2 1-2.3-.1 0-2.2-.8-2.2-3.1ZM14.6 6.3c.5-.7.9-1.6.8-2.5-.8 0-1.7.5-2.3 1.2-.5.6-.9 1.5-.8 2.4.9.1 1.8-.4 2.3-1.1Z" fill="currentColor"/></svg>
+                <span class="store-badge__text"><small>Coming soon on the</small><strong>App Store</strong></span>
+              </span>
+              <span class="store-badge" role="img" aria-label="Coming soon on Google Play" title="Coming soon">
+                <svg class="store-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3.2c-.3.2-.5.6-.5 1.1v15.4c0 .5.2.9.5 1.1l9-8.8-9-8.8Z" fill="currentColor" opacity=".85"/><path d="m16.3 9.1-2.9-1.7-2.7 2.6 2.7 2.6 3-1.7c.8-.5.8-1.4-.1-1.8Z" fill="currentColor"/><path d="m4 3.2 9 8.8 2.5-2.5L5.9 2.6C5.2 2.2 4.5 2.5 4 3.2Z" fill="currentColor" opacity=".6"/><path d="m13 12 -9 8.8c.5.7 1.2 1 1.9.6l9.6-5.5L13 12Z" fill="currentColor" opacity=".7"/></svg>
+                <span class="store-badge__text"><small>Coming soon on</small><strong>Google Play</strong></span>
+              </span>
+            </div>
+            <a class="btn btn--ghost" href="#features">See what it does &rarr;</a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" data-reveal-delay="2">
+          <div class="phone phone--float">
+            <div class="phone__frame">
+              <span class="phone__island" aria-hidden="true"></span>
+              <img class="phone__screen" src="assets/screenshots/hero.png" alt="HoopScout live game screen showing a score bar, on-court players and the stat button grid"
+                   loading="eager" width="320" height="692"
+                   onerror="this.onerror=null;this.src='assets/screenshots/ph-hero.svg';" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ POSITIONING / STATS ============ -->
+    <section class="band">
+      <div class="wrap">
+        <p class="band__lead reveal">
+          Built for the coach who does it all. No stats crew, no laptop,
+          no Wi-Fi required — just you, your bench, and the numbers that win games.
+        </p>
+        <div class="stats">
+          <div class="stat reveal" data-reveal-delay="1">
+            <span class="stat__num" data-count="16">0</span>
+            <span class="stat__label">Stats tracked per player</span>
+          </div>
+          <div class="stat reveal" data-reveal-delay="2">
+            <span class="stat__num" data-count="11">0</span>
+            <span class="stat__label">Shot-chart court zones</span>
+          </div>
+          <div class="stat reveal" data-reveal-delay="3">
+            <span class="stat__num" data-count="100" data-suffix="%">0</span>
+            <span class="stat__label">Offline-first, always</span>
+          </div>
+          <div class="stat reveal" data-reveal-delay="4">
+            <span class="stat__num" data-count="5">0</span>
+            <span class="stat__label">On-court players, live</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SPOTLIGHT 1 — LIVE TRACKING ============ -->
+    <section class="spotlight" id="features">
+      <div class="wrap spotlight__inner">
+        <div class="spotlight__copy reveal">
+          <p class="eyebrow">Live tracking</p>
+          <h2>Log a play faster than the ref blows the whistle.</h2>
+          <p>
+            A single tap logs points, rebounds, assists, steals, fouls and more —
+            for whoever's on the floor. Substitutions, the game clock and
+            minutes-played all keep themselves. You watch the game;
+            HoopScout keeps the book.
+          </p>
+          <ul class="ticks">
+            <li>One-thumb stat grid you can reorder to your style</li>
+            <li>Make / miss shot capture with tap-to-place location</li>
+            <li>Live box score, on demand, mid-game</li>
+            <li>Undo anything, instantly — no wrong tap sticks</li>
+          </ul>
+        </div>
+        <div class="spotlight__visual reveal" data-reveal-delay="1">
+          <div class="phone" data-parallax="0.04">
+            <div class="phone__frame">
+              <span class="phone__island" aria-hidden="true"></span>
+              <img class="phone__screen" src="assets/screenshots/live-tracking.png" alt="HoopScout shot-confirm sheet with large Make and Miss buttons"
+                   loading="lazy" width="320" height="692"
+                   onerror="this.onerror=null;this.src='assets/screenshots/ph-live-tracking.svg';" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SPOTLIGHT 2 — SHOT ZONES ============ -->
+    <section class="spotlight spotlight--reverse">
+      <div class="wrap spotlight__inner">
+        <div class="spotlight__copy reveal">
+          <p class="eyebrow">Shot zones</p>
+          <h2>See exactly where the buckets come from.</h2>
+          <p>
+            Tap where each shot went up and HoopScout builds a live heatmap —
+            eleven court zones, made, attempted and FG% on every one.
+            Spot the hot hand, the cold corner, and the shot selection to
+            fix at halftime.
+          </p>
+          <ul class="ticks">
+            <li>Eleven-zone half-court heatmap</li>
+            <li>Per-player or whole-team, your call</li>
+            <li>Cold-to-hot colour coding reads at a glance</li>
+            <li>Works live during the game and in the post-game report</li>
+          </ul>
+        </div>
+        <div class="spotlight__visual reveal" data-reveal-delay="1">
+          <div class="phone" data-parallax="0.04">
+            <div class="phone__frame">
+              <span class="phone__island" aria-hidden="true"></span>
+              <img class="phone__screen" src="assets/screenshots/shot-zones.png" alt="HoopScout shot-zone heatmap on a half court with FG% badges per zone"
+                   loading="lazy" width="320" height="692"
+                   onerror="this.onerror=null;this.src='assets/screenshots/ph-shot-zones.svg';" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MORE IN THE APP ============ -->
+    <section class="more">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">And there's more</p>
+          <h2>Pro-grade tools, coach-simple to use.</h2>
+        </div>
+        <div class="cards">
+          <article class="card reveal" data-reveal-delay="1">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 19V5m5 14V9m5 10V3m5 16v-8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Advanced metrics</h3>
+            <p>PIR, EFF and true plus-minus computed for every player, every game — the numbers scouts actually read.</p>
+          </article>
+          <article class="card reveal" data-reveal-delay="2">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v5h5M8.5 13h7M8.5 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Reports &amp; export</h3>
+            <p>Full box scores, season averages and quarter breakdowns. Share a polished PDF or Excel in two taps.</p>
+          </article>
+          <article class="card reveal" data-reveal-delay="3">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6.5 18a4.5 4.5 0 0 1-.5-9 6 6 0 0 1 11.6 1.4A3.8 3.8 0 0 1 17.5 18H6.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 11v6m0-6-2.2 2.2M12 11l2.2 2.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Offline-first</h3>
+            <p>Every tap saves on-device instantly and syncs to the cloud when you're back on Wi-Fi. Dead gym? No problem.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="how" id="how">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">How it works</p>
+          <h2>From tip-off to final buzzer.</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal" data-reveal-delay="1">
+            <span class="step__num">1</span>
+            <h3>Build your team</h3>
+            <p>Add your roster once — names, numbers, positions. Reuse it all season long.</p>
+          </li>
+          <li class="step reveal" data-reveal-delay="2">
+            <span class="step__num">2</span>
+            <h3>Track it live</h3>
+            <p>Pick your starting five, tip off, and tap the action as it happens on the floor.</p>
+          </li>
+          <li class="step reveal" data-reveal-delay="3">
+            <span class="step__num">3</span>
+            <h3>Read the report</h3>
+            <p>The final buzzer hands you box scores, shot charts and shareable reports.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq" id="faq">
+      <div class="wrap faq__inner">
+        <div class="section-head reveal">
+          <p class="eyebrow">Good to know</p>
+          <h2>Questions, answered.</h2>
+        </div>
+        <div class="faq__list">
+          <details class="qa reveal">
+            <summary>When can I get HoopScout?<span class="qa__mark" aria-hidden="true"></span></summary>
+            <div class="qa__body"><p>It's in the final stretch of development. This page is exactly where the App Store and Google Play links will land the moment it's live — check back soon.</p></div>
+          </details>
+          <details class="qa reveal">
+            <summary>Which devices does it run on?<span class="qa__mark" aria-hidden="true"></span></summary>
+            <div class="qa__body"><p>iPhone and Android phones and tablets. It's built to work one-handed courtside and adapts cleanly to portrait or landscape.</p></div>
+          </details>
+          <details class="qa reveal">
+            <summary>Do I need internet during a game?<span class="qa__mark" aria-hidden="true"></span></summary>
+            <div class="qa__body"><p>No. HoopScout is offline-first: everything saves to your device instantly and syncs to the cloud later, so dead gym Wi-Fi never costs you a stat.</p></div>
+          </details>
+          <details class="qa reveal">
+            <summary>How much will it cost?<span class="qa__mark" aria-hidden="true"></span></summary>
+            <div class="qa__body"><p>HoopScout will launch free and ad-supported, with an optional ad-free upgrade down the line. Final pricing lands at launch.</p></div>
+          </details>
+          <details class="qa reveal">
+            <summary>Is it only for one team?<span class="qa__mark" aria-hidden="true"></span></summary>
+            <div class="qa__body"><p>Not at all — keep as many saved teams and rosters as you like, each with its own game history and season averages.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CLOSING CTA ============ -->
+    <section class="cta">
+      <div class="wrap cta__inner reveal">
+        <span class="cta__mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="48" cy="46" r="33" fill="#F4821F"/>
+            <line x1="48" y1="13" x2="48" y2="79" stroke="#0D1B2A" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M 20,24 Q 46,46 20,68" stroke="#0D1B2A" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+            <path d="M 76,24 Q 50,46 76,68" stroke="#0D1B2A" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+            <circle cx="76" cy="76" r="15" fill="rgba(255,255,255,0.10)" stroke="#fff" stroke-width="5"/>
+            <line x1="87" y1="87" x2="96" y2="96" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <h2>Coming soon to iOS &amp; Android.</h2>
+        <p>HoopScout is almost ready for tip-off. The download buttons go live right here on launch day.</p>
+        <div class="badges badges--center">
+          <span class="store-badge" role="img" aria-label="Coming soon on the App Store" title="Coming soon">
+            <svg class="store-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.9c0-2 1.6-3 1.7-3-1-1.4-2.4-1.6-2.9-1.6-1.2-.1-2.4.7-3 .7-.6 0-1.6-.7-2.6-.7-1.3 0-2.6.8-3.2 2-1.4 2.4-.4 6 1 8 .7 1 1.4 2 2.4 2 1 0 1.3-.6 2.5-.6s1.5.6 2.5.6 1.7-1 2.3-2c.7-1.1 1-2.2 1-2.3-.1 0-2.2-.8-2.2-3.1ZM14.6 6.3c.5-.7.9-1.6.8-2.5-.8 0-1.7.5-2.3 1.2-.5.6-.9 1.5-.8 2.4.9.1 1.8-.4 2.3-1.1Z" fill="currentColor"/></svg>
+            <span class="store-badge__text"><small>Coming soon on the</small><strong>App Store</strong></span>
+          </span>
+          <span class="store-badge" role="img" aria-label="Coming soon on Google Play" title="Coming soon">
+            <svg class="store-badge__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3.2c-.3.2-.5.6-.5 1.1v15.4c0 .5.2.9.5 1.1l9-8.8-9-8.8Z" fill="currentColor" opacity=".85"/><path d="m16.3 9.1-2.9-1.7-2.7 2.6 2.7 2.6 3-1.7c.8-.5.8-1.4-.1-1.8Z" fill="currentColor"/><path d="m4 3.2 9 8.8 2.5-2.5L5.9 2.6C5.2 2.2 4.5 2.5 4 3.2Z" fill="currentColor" opacity=".6"/><path d="m13 12 -9 8.8c.5.7 1.2 1 1.9.6l9.6-5.5L13 12Z" fill="currentColor" opacity=".7"/></svg>
+            <span class="store-badge__text"><small>Coming soon on</small><strong>Google Play</strong></span>
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <a class="brand" href="#top" aria-label="HoopScout home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="48" cy="46" r="33" fill="#F4821F"/>
+              <line x1="48" y1="13" x2="48" y2="79" stroke="#0D1B2A" stroke-width="3.2" stroke-linecap="round"/>
+              <path d="M 20,24 Q 46,46 20,68" stroke="#0D1B2A" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+              <path d="M 76,24 Q 50,46 76,68" stroke="#0D1B2A" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+              <circle cx="76" cy="76" r="15" fill="rgba(255,255,255,0.10)" stroke="#fff" stroke-width="5"/>
+              <line x1="87" y1="87" x2="96" y2="96" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand__word">HoopScout</span>
+        </a>
+        <p class="footer__tag">The scout in your pocket.</p>
+      </div>
+      <nav class="footer__cols" aria-label="Footer">
+        <div class="footer__col">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#how">How it works</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="#" aria-disabled="true">Privacy</a>
+          <a href="#" aria-disabled="true">Contact</a>
+        </div>
+      </nav>
+    </div>
+    <div class="wrap footer__base">
+      <span>&copy; <span id="year">2026</span> HoopScout. Built for coaches.</span>
+      <span class="footer__soon">Not yet available — coming soon to iOS &amp; Android.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<svg viewBox="0 0 320 692" xmlns="http://www.w3.org/2000/svg" font-family="'Barlow Semi Condensed','Barlow',sans-serif" role="img" aria-label="HoopScout live game screen preview">
+  <defs>
+    <clipPath id="scr"><rect width="320" height="692" rx="0"/></clipPath>
+  </defs>
+  <g clip-path="url(#scr)">
+    <rect width="320" height="692" fill="#0B0D10"/>
+
+    <!-- header band + score bar -->
+    <rect width="320" height="150" fill="#151920"/>
+    <text x="20" y="34" fill="#8A93A2" font-size="12" letter-spacing="1.5">LIVE · Q3  ·  ROSTER</text>
+    <!-- home -->
+    <text x="20" y="86" fill="#E8ECF2" font-size="15" font-weight="700">HAWKS</text>
+    <text x="20" y="126" fill="#F2790A" font-size="46" font-weight="700" font-variant="tabular-nums">58</text>
+    <!-- clock pill -->
+    <rect x="118" y="74" width="84" height="46" rx="12" fill="#1E232B" stroke="#232833"/>
+    <circle cx="132" cy="97" r="3.5" fill="#F2790A"/>
+    <text x="160" y="94" fill="#E8ECF2" font-size="17" font-weight="700" text-anchor="middle" font-variant="tabular-nums">6:24</text>
+    <text x="160" y="112" fill="#8A93A2" font-size="10" text-anchor="middle" letter-spacing="1">TAP · PAUSE</text>
+    <!-- opp -->
+    <text x="300" y="86" fill="#E8ECF2" font-size="15" font-weight="700" text-anchor="end">EAGLES</text>
+    <text x="300" y="126" fill="#E8ECF2" font-size="46" font-weight="700" text-anchor="end" font-variant="tabular-nums">51</text>
+
+    <!-- on-court cards -->
+    <g>
+      <g transform="translate(14,172)">
+        <rect width="52" height="70" rx="10" fill="#141821" stroke="#232833"/>
+        <text x="26" y="30" fill="#F2790A" font-size="22" font-weight="700" text-anchor="middle" font-variant="tabular-nums">7</text>
+        <text x="26" y="52" fill="#C6CDD8" font-size="10" text-anchor="middle">REED</text>
+        <text x="26" y="64" fill="#8A93A2" font-size="9" text-anchor="middle">PG</text>
+      </g>
+      <g transform="translate(72,172)">
+        <rect width="52" height="70" rx="10" fill="#141821" stroke="#232833"/>
+        <text x="26" y="30" fill="#F2790A" font-size="22" font-weight="700" text-anchor="middle" font-variant="tabular-nums">12</text>
+        <text x="26" y="52" fill="#C6CDD8" font-size="10" text-anchor="middle">COX</text>
+        <text x="26" y="64" fill="#8A93A2" font-size="9" text-anchor="middle">SG</text>
+      </g>
+      <g transform="translate(130,172)">
+        <rect width="52" height="70" rx="10" fill="#141821" stroke="#232833"/>
+        <text x="26" y="30" fill="#F2790A" font-size="22" font-weight="700" text-anchor="middle" font-variant="tabular-nums">23</text>
+        <text x="26" y="52" fill="#C6CDD8" font-size="10" text-anchor="middle">HALL</text>
+        <text x="26" y="64" fill="#8A93A2" font-size="9" text-anchor="middle">SF</text>
+      </g>
+      <g transform="translate(188,172)">
+        <rect width="52" height="70" rx="10" fill="#141821" stroke="#232833"/>
+        <text x="26" y="30" fill="#F2790A" font-size="22" font-weight="700" text-anchor="middle" font-variant="tabular-nums">33</text>
+        <text x="26" y="52" fill="#C6CDD8" font-size="10" text-anchor="middle">DIAZ</text>
+        <text x="26" y="64" fill="#8A93A2" font-size="9" text-anchor="middle">PF</text>
+      </g>
+      <g transform="translate(246,172)">
+        <rect width="52" height="70" rx="10" fill="#141821" stroke="#232833"/>
+        <text x="26" y="30" fill="#F2790A" font-size="22" font-weight="700" text-anchor="middle" font-variant="tabular-nums">45</text>
+        <text x="26" y="52" fill="#C6CDD8" font-size="10" text-anchor="middle">YU</text>
+        <text x="26" y="64" fill="#8A93A2" font-size="9" text-anchor="middle">C</text>
+      </g>
+    </g>
+
+    <!-- stat grid 4x3 -->
+    <g font-size="13" font-weight="700" text-anchor="middle">
+      <!-- row 1 -->
+      <g transform="translate(14,262)"><rect width="66" height="56" rx="12" fill="#F2790A"/><text x="33" y="34" fill="#06171A">2PT</text></g>
+      <g transform="translate(88,262)"><rect width="66" height="56" rx="12" fill="#F2790A"/><text x="33" y="34" fill="#06171A">3PT</text></g>
+      <g transform="translate(162,262)"><rect width="66" height="56" rx="12" fill="#F2790A"/><text x="33" y="34" fill="#06171A">FT</text></g>
+      <g transform="translate(236,262)"><rect width="66" height="56" rx="12" fill="#1E232B" stroke="#232833"/><text x="33" y="34" fill="#E8ECF2">REB</text></g>
+      <!-- row 2 -->
+      <g transform="translate(14,326)"><rect width="66" height="56" rx="12" fill="#1E232B" stroke="#232833"/><text x="33" y="34" fill="#E8ECF2">AST</text></g>
+      <g transform="translate(88,326)"><rect width="66" height="56" rx="12" fill="#1E232B" stroke="#232833"/><text x="33" y="34" fill="#E8ECF2">STL</text></g>
+      <g transform="translate(162,326)"><rect width="66" height="56" rx="12" fill="#1E232B" stroke="#232833"/><text x="33" y="34" fill="#E8ECF2">BLK</text></g>
+      <g transform="translate(236,326)"><rect width="66" height="56" rx="12" fill="#1E232B" stroke="#232833"/><text x="33" y="34" fill="#E8ECF2">TOV</text></g>
+      <!-- row 3 -->
+      <g transform="translate(14,390)"><rect width="66" height="56" rx="12" fill="#1E232B" stroke="#232833"/><text x="33" y="34" fill="#E8ECF2">FOUL</text></g>
+      <g transform="translate(88,390)"><rect width="66" height="56" rx="12" fill="#1E232B" stroke="#232833"/><text x="33" y="30" fill="#E8ECF2" font-size="11">FLS</text><text x="33" y="43" fill="#E8ECF2" font-size="11">DRWN</text></g>
+      <g transform="translate(162,390)"><rect width="66" height="56" rx="12" fill="#1E232B" stroke="#232833"/><text x="33" y="30" fill="#E8ECF2" font-size="12">O</text><text x="33" y="44" fill="#8A93A2" font-size="9">REB</text></g>
+      <g transform="translate(236,390)"><rect width="66" height="56" rx="12" fill="#1E232B" stroke="#232833"/><text x="33" y="34" fill="#E8ECF2">BLKD</text></g>
+    </g>
+
+    <!-- toast -->
+    <g transform="translate(64,470)">
+      <rect width="192" height="40" rx="20" fill="#1E232B" stroke="#F2790A"/>
+      <circle cx="24" cy="20" r="7" fill="#F2790A"/>
+      <text x="42" y="25" fill="#E8ECF2" font-size="13" font-weight="700">+3 · #23 HALL</text>
+    </g>
+
+    <!-- bottom action bar -->
+    <g transform="translate(14,540)">
+      <rect width="140" height="48" rx="12" fill="none" stroke="#232833"/>
+      <text x="70" y="30" fill="#C6CDD8" font-size="14" font-weight="700" text-anchor="middle">UNDO</text>
+    </g>
+    <g transform="translate(166,540)">
+      <rect width="140" height="48" rx="12" fill="#E5484D"/>
+      <text x="70" y="30" fill="#fff" font-size="14" font-weight="700" text-anchor="middle">END GAME</text>
+    </g>
+
+    <!-- home indicator -->
+    <rect x="120" y="672" width="80" height="5" rx="2.5" fill="#2A2F3A"/>
+  </g>
+</svg>

@@ -452,6 +452,53 @@ h1, h2, h3, h4 { font-family: var(--font-title); font-weight: 700; line-height: 
 }
 .footer__soon { color: var(--accent); }
 
+/* Instagram / social button */
+.social-btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-top: 20px; padding: 10px 16px; border-radius: 13px;
+  background: var(--bg-elev); border: 1px solid var(--border);
+  color: var(--text); font-family: var(--font-title);
+  transition: transform .2s var(--ease), border-color .2s ease, background-color .2s ease;
+}
+.social-btn:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
+.social-btn__icon { width: 30px; height: 30px; flex: none; }
+.social-btn__text { display: flex; flex-direction: column; line-height: 1.2; font-weight: 600; font-size: 1.02rem; }
+.social-btn__text small { font-size: 0.78rem; font-weight: 500; color: var(--text-3); }
+
+/* ============================================================
+   LEGAL / PROSE PAGE (privacy.html)
+   ============================================================ */
+.legal { padding: clamp(32px, 6vw, 72px) 0 clamp(48px, 7vw, 88px); }
+.legal__inner { max-width: 820px; }
+.legal__head { margin-bottom: clamp(28px, 4vw, 44px); }
+.legal h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 12px; }
+.legal__updated { color: var(--text-3); font-family: var(--font-title); font-size: 0.98rem; }
+.legal__note {
+  margin: 22px 0 8px; padding: 16px 20px; border-radius: var(--radius);
+  background: var(--accent-wash); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  color: var(--text-2); font-size: 0.95rem;
+}
+.legal h2 {
+  font-size: clamp(1.4rem, 2.6vw, 1.8rem); margin: 40px 0 12px;
+  padding-top: 20px; border-top: 1px solid var(--border-soft);
+}
+.legal h3 { font-size: 1.15rem; margin: 22px 0 8px; color: var(--text); }
+.legal p { color: var(--text-2); margin-bottom: 14px; }
+.legal ul { margin: 0 0 16px; padding-left: 22px; list-style: disc; }
+.legal ul li { color: var(--text-2); margin-bottom: 8px; padding-left: 4px; }
+.legal ul li::marker { color: var(--accent); }
+.legal a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.legal a:hover { opacity: 0.85; }
+.legal strong { color: var(--text); font-weight: 700; }
+.legal address { font-style: normal; color: var(--text-2); }
+
+.subnav-back {
+  font-family: var(--font-title); font-weight: 600; color: var(--text-2);
+  display: inline-flex; align-items: center; gap: 7px; transition: color .2s ease;
+}
+.subnav-back:hover { color: var(--accent); }
+.subnav-back svg { width: 18px; height: 18px; }
+
 /* ============================================================
    REVEAL ANIMATIONS
    ============================================================ */

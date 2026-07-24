@@ -55,17 +55,31 @@ live, turn each into a link:
 
 There are two badge pairs to update: the **hero** and the **closing CTA**.
 
+## Privacy policy, contact & Instagram
+
+- **Privacy policy:** `privacy.html` is a GDPR / Google AdMob-ready policy,
+  linked from the footer. Its public URL (needed in the AdMob console) is
+  `https://<your-username>.github.io/HoopScout-Website/privacy.html`. It's a
+  tailored draft — review it before relying on it legally.
+- **Contact:** the footer "Contact" link and the policy use
+  `info.hoopscout@gmail.com`. Change it in `index.html`, `privacy.html` and the
+  policy body if that address changes.
+- **Instagram:** the footer button links to
+  `https://www.instagram.com/hoopscout_official/` (update in both `index.html`
+  and `privacy.html` if the handle changes).
+
 ## Structure
 
 ```
-index.html            The whole page (single file, semantic sections)
+index.html            The landing page (single file, semantic sections)
+privacy.html          Privacy policy page (shares nav/footer + styles.css)
 css/styles.css        Design tokens + all styling (dark default + light theme)
 js/main.js            Scroll reveals, count-ups, parallax, theme toggle
 assets/
   logo.svg            Brand mark
   favicon.svg         Tab / touch icon
   og-image.svg        Social share image
-  screenshots/        Drop real PNGs here (see table above)
+  screenshots/        hero.png + shot-zones.png (real) + SVG placeholders
 ```
 
 ## Design notes

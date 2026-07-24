@@ -26,14 +26,16 @@ Plain **static HTML/CSS/JS — no build step, no dependencies, no framework.**
 ## File map
 
 ```
-index.html        Entire page — one file, semantic <section>s. Edit copy/structure here.
+index.html        Entire landing page — one file, semantic <section>s. Edit copy/structure here.
+privacy.html      GDPR/AdMob privacy policy (its own page). Shares nav/footer + styles.css.
 css/styles.css    Design tokens (:root) + ALL styling. Dark default + light theme.
 js/main.js        Vanilla JS: scroll reveals, count-ups, parallax, theme toggle, year.
+                  Its null-guards mean it runs harmlessly on privacy.html too.
 assets/
   logo.svg          Brand mark (basketball + scout magnifier).
   favicon.svg       Tab/touch icon (navy rounded square framing the mark).
   og-image.svg      Social share card.
-  screenshots/      Real PNGs go here; SVG placeholders + README.txt live here too.
+  screenshots/      Real PNGs (hero.png, shot-zones.png) + SVG placeholders + README.txt.
 README.md         Human-facing run/deploy/screenshot/launch instructions.
 ```
 
@@ -65,7 +67,17 @@ changes, update `:root` in `css/styles.css` and the inlined logo SVGs to match.
   inline `onerror` that swaps to the placeholder SVG. Dropping a correctly-named PNG
   into `assets/screenshots/` makes it appear with **no code edit**. Expected names:
   `hero.png`, `live-tracking.png`, `shot-zones.png` (see `assets/screenshots/README.txt`).
-  Keep the `onerror` handler if you add a new screenshot slot.
+  Keep the `onerror` handler if you add a new screenshot slot. `hero.png`
+  (Game Log) and `shot-zones.png` (Shot Zones heatmap) are real, already cleaned;
+  `live-tracking.png` is still the placeholder.
+- **Clean every real screenshot before using it.** Raw device captures show the
+  OS status bar (clock, notification icons, battery) and, from an Expo Go dev
+  build, a floating settings-gear button — **both must be removed.** The two
+  current shots were processed with Windows PowerShell + `System.Drawing`: sample
+  a flat background pixel, `FillRectangle` over the gear, then crop off the top
+  status bar and bottom gesture pill and centre-crop to the phone-frame aspect
+  **320:692** (so `object-fit: cover` doesn't clip content). Mirror that for any
+  new screenshot.
 - **Reveal-on-scroll:** elements with class `reveal` start at `opacity:0` and are
   shown when `main.js` adds `.is-visible` via IntersectionObserver. Stagger is set
   with `data-reveal-delay="N"` (× 90ms). If you add content that must animate in, give

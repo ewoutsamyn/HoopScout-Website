@@ -59,8 +59,17 @@ There are two badge pairs to update: the **hero** and the **closing CTA**.
 
 - **Privacy policy:** `privacy.html` is a GDPR / Google AdMob-ready policy,
   linked from the footer. Its public URL (needed in the AdMob console) is
-  `https://<your-username>.github.io/HoopScout-Website/privacy.html`. It's a
-  tailored draft — review it before relying on it legally.
+  `https://hoop-scout.com/privacy.html`. It's a tailored draft — review it
+  before relying on it legally.
+
+## Custom domain
+
+The site is served at **https://hoop-scout.com** (GitHub Pages custom domain).
+The apex `hoop-scout.com` is canonical; `www` redirects to it. The domain is set
+by the root `CNAME` file (`hoop-scout.com`) plus the Pages setting; DNS lives at
+the Squarespace registrar (four A records → GitHub's `185.199.108–111.153`, and
+`www` CNAME → `ewoutsamyn.github.io`). Don't delete the `CNAME` file or the
+custom domain drops on the next deploy.
 - **Contact:** the footer "Contact" link and the policy use
   `info.hoopscout@gmail.com`. Change it in `index.html`, `privacy.html` and the
   policy body if that address changes.

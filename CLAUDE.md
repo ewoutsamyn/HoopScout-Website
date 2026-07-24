@@ -37,7 +37,15 @@ assets/
   og-image.svg      Social share card.
   screenshots/      Real PNGs (hero.png, shot-zones.png) + SVG placeholders + README.txt.
 README.md         Human-facing run/deploy/screenshot/launch instructions.
+CNAME             GitHub Pages custom domain (`hoop-scout.com`). Do not delete.
 ```
+
+**Hosting:** deployed to GitHub Pages (public repo, Actions workflow) and served
+at **https://hoop-scout.com** — apex canonical, `www` redirects. The domain is
+pinned by the root `CNAME` file; DNS is at the Squarespace registrar (A records →
+`185.199.108–111.153`, `www` CNAME → `ewoutsamyn.github.io`). All asset paths are
+relative, so the site works at the domain root and at the `github.io` subpath
+alike. Absolute URLs (canonical, `og:url`, `og:image`) point at `hoop-scout.com`.
 
 ## Brand system (must stay in sync with the app)
 

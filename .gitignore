@@ -21,3 +21,9 @@ Desktop.ini
 # Local env / secrets (none used today, but never commit them)
 .env
 .env.*
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example

@@ -1,4 +1,4 @@
-HoopScout website — screenshots
+BBall Sideline IQ website — screenshots
 ================================
 
 Drop your real app screenshots into THIS folder using the exact

@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="'Poppins','Barlow Semi Condensed',sans-serif" role="img" aria-label="HoopScout — coaching stats, courtside">
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="'Poppins','Barlow Semi Condensed',sans-serif" role="img" aria-label="BBall Sideline IQ — coaching stats, courtside">
   <defs>
     <radialGradient id="glow" cx="78%" cy="30%" r="60%">
       <stop offset="0%" stop-color="#F2790A" stop-opacity="0.28"/>
@@ -23,9 +23,13 @@
     <line x1="87" y1="87" x2="96" y2="96" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
   </g>
 
-  <text x="96" y="360" fill="#FFFFFF" font-size="86" font-weight="700">HoopScout</text>
-  <text x="98" y="430" fill="#C6CDD8" font-family="'Barlow Semi Condensed',sans-serif" font-size="40" font-weight="600">The scout in your pocket. Track every possession, courtside.</text>
-  <g transform="translate(98,470)">
+  <!-- Wordmark at 76, not the old 86: "BBall Sideline IQ" is 17 characters
+       against "HoopScout"'s 9 and needs the extra room on a 1200-wide card.
+       The strapline is two lines for the same reason. -->
+  <text x="96" y="350" fill="#FFFFFF" font-size="76" font-weight="700">BBall Sideline IQ</text>
+  <text x="98" y="415" fill="#C6CDD8" font-family="'Barlow Semi Condensed',sans-serif" font-size="38" font-weight="600">The stats crew on your sideline.</text>
+  <text x="98" y="462" fill="#C6CDD8" font-family="'Barlow Semi Condensed',sans-serif" font-size="38" font-weight="600">Track every possession, courtside.</text>
+  <g transform="translate(98,505)">
     <rect width="220" height="52" rx="26" fill="#F2790A"/>
     <text x="110" y="34" fill="#06171A" font-family="'Barlow Semi Condensed',sans-serif" font-size="22" font-weight="700" text-anchor="middle" letter-spacing="1">COMING SOON</text>
   </g>

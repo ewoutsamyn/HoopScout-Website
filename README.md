@@ -71,10 +71,10 @@ the Squarespace registrar (four A records → GitHub's `185.199.108–111.153`, 
 `www` CNAME → `ewoutsamyn.github.io`). Don't delete the `CNAME` file or the
 custom domain drops on the next deploy.
 - **Contact:** the footer "Contact" link and the policy use
-  `info.hooptrax@gmail.com`. Change it in `index.html`, `privacy.html` and the
+  `bballsidelineiq@gmail.com`. Change it in `index.html`, `privacy.html` and the
   policy body if that address changes.
 - **Instagram:** the footer button links to
-  `https://www.instagram.com/hooptrax/` (update in both `index.html`
+  `https://www.instagram.com/hooptraxofficial/` (update in both `index.html`
   and `privacy.html` if the handle changes).
 
 ## Structure

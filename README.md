@@ -85,6 +85,13 @@ path can keep returning "Site not found" while `/index.html` and `/privacy.html`
 serve correctly — a fresh deploy fixes the root routing. That symptom is a
 routing artifact, not a broken deploy.
 
+**The host is GitHub Pages. Cloudflare is only a proxy in front of it** — DNS
+plus CDN. Don't reach for Cloudflare Pages / "Workers & Pages"; adding the domain
+there fails with *"hostname already has externally managed DNS records"*, because
+the records already point at GitHub. Every response header says
+`Server: cloudflare`, which makes it look Cloudflare-hosted; it isn't, and a
+GitHub Actions deploy is what publishes changes.
+
 **DNS runs through Cloudflare, not the registrar.** The domain is *registered*
 at Squarespace, but its nameservers are delegated to Cloudflare
 (`dante.ns.cloudflare.com` / `stephane.ns.cloudflare.com`), and the DNS records

@@ -56,6 +56,16 @@ Afterwards, **re-run the workflow**: right after a domain change the root path c
 still 404 while `/index.html` serves fine, and a fresh deploy repairs the root
 routing.
 
+**Cloudflare is a proxy in front, NOT the host.** The site is served by **GitHub
+Pages**; Cloudflare only does DNS and (orange-cloud) CDN proxying. **Cloudflare
+Pages / "Workers & Pages" is not used and must not be** — trying to add
+`hoop-trax.com` there fails with *"hostname already has externally managed DNS
+records"*, which is correct: those records are the ones pointing at GitHub. The
+predecessor domain hoop-scout.com had this exact same arrangement, which is easy
+to misread as "hosted on Cloudflare" because every response says
+`Server: cloudflare`. It isn't — a GitHub Actions deploy is what changes the
+content.
+
 **DNS is on Cloudflare, not the registrar** — the domain is *registered* at
 Squarespace but its nameservers are delegated to Cloudflare, where four apex `A`
 records point at GitHub's `185.199.108.153`–`185.199.111.153` and `www` is a

@@ -1,6 +1,6 @@
-# BBall Sideline IQ — Website
+# HoopTrax — Website
 
-The marketing / landing page for **BBall Sideline IQ**, the courtside basketball
+The marketing / landing page for **HoopTrax**, the courtside basketball
 stats app. Static HTML/CSS/JS — no build step, no dependencies.
 
 ## Run it
@@ -71,10 +71,10 @@ the Squarespace registrar (four A records → GitHub's `185.199.108–111.153`, 
 `www` CNAME → `ewoutsamyn.github.io`). Don't delete the `CNAME` file or the
 custom domain drops on the next deploy.
 - **Contact:** the footer "Contact" link and the policy use
-  `info.bballiq@gmail.com`. Change it in `index.html`, `privacy.html` and the
+  `info.hooptrax@gmail.com`. Change it in `index.html`, `privacy.html` and the
   policy body if that address changes.
 - **Instagram:** the footer button links to
-  `https://www.instagram.com/bballsidelineiq/` (update in both `index.html`
+  `https://www.instagram.com/hooptrax/` (update in both `index.html`
   and `privacy.html` if the handle changes).
 
 ## Structure
@@ -93,7 +93,7 @@ assets/
 
 ## Design notes
 
-- Colours, type and the logo mirror the BBall Sideline IQ app's theme
+- Colours, type and the logo mirror the HoopTrax app's theme
   (`constants/theme.ts`): near-black dark palette, orange accent
   `#F2790A`, Barlow Semi Condensed headings, Poppins wordmark.
 - A **dark / light theme toggle** sits in the nav (dark is default); the

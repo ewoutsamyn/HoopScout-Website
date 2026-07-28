@@ -1,4 +1,4 @@
-BBall Sideline IQ website — screenshots
+HoopTrax website — screenshots
 ================================
 
 Drop your real app screenshots into THIS folder using the exact

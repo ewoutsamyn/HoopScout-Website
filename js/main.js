@@ -1,5 +1,5 @@
 /* ============================================================
-   BBall Sideline IQ — marketing site interactions
+   HoopTrax — marketing site interactions
    Dependency-free. Respects prefers-reduced-motion.
    ============================================================ */
 (function () {
@@ -24,7 +24,7 @@
     toggle.addEventListener('click', function () {
       var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', next);
-      try { localStorage.setItem('bballiq-theme', next); } catch (e) {}
+      try { localStorage.setItem('hooptrax-theme', next); } catch (e) {}
       applyToggleState();
     });
   }

@@ -1,10 +1,10 @@
 # CLAUDE.md
 
-Guidance for Claude Code (claude.ai/code) when working in the **BBall Sideline IQ Website** repo.
+Guidance for Claude Code (claude.ai/code) when working in the **HoopTrax Website** repo.
 
 ## What this is
 
-The marketing / landing page for **BBall Sideline IQ**, a single-coach live basketball
+The marketing / landing page for **HoopTrax**, a single-coach live basketball
 game-tracking app (the app itself lives in the sibling `../HoopScout App/` folder —
 an Expo/React Native project). This repo is **only the website**, not the app.
 
@@ -32,8 +32,7 @@ css/styles.css    Design tokens (:root) + ALL styling. Dark default + light them
 js/main.js        Vanilla JS: scroll reveals, count-ups, parallax, theme toggle, year.
                   Its null-guards mean it runs harmlessly on privacy.html too.
 assets/
-  logo.svg          Brand mark (basketball + magnifier; the magnifier dates from the
-                    old "HoopScout" name and was kept through the rebrand).
+  logo.svg          Brand mark (basketball + scout magnifier).
   favicon.svg       Tab/touch icon (navy rounded square framing the mark).
   og-image.svg      Social share card.
   screenshots/      Real PNGs (hero.png, shot-zones.png) + SVG placeholders + README.txt.
@@ -99,7 +98,7 @@ changes, update `:root` in `css/styles.css` and the inlined logo SVGs to match.
   `phone--float` keyframe animation and therefore has **no** `data-parallax` (an inline
   transform would kill the float). Static spotlight phones use `data-parallax`. Don't
   add `data-parallax` to a floating element.
-- **Theme toggle** persists to `localStorage['bballiq-theme']`; an inline script in
+- **Theme toggle** persists to `localStorage['hooptrax-theme']`; an inline script in
   `<head>` applies it before paint to avoid a flash. Dark is the default.
 - **Store badges are `<span class="store-badge">`, not links, on purpose** (app is
   pre-launch). At launch, convert each to an `<a href>` and update the "Coming soon"

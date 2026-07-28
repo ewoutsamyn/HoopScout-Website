@@ -37,15 +37,33 @@ assets/
   og-image.svg      Social share card.
   screenshots/      Real PNGs (hero.png, shot-zones.png) + SVG placeholders + README.txt.
 README.md         Human-facing run/deploy/screenshot/launch instructions.
-CNAME             GitHub Pages custom domain (`hoop-scout.com`). Do not delete.
+CNAME             GitHub Pages custom domain (`hoop-trax.com`). Do not delete.
 ```
 
 **Hosting:** deployed to GitHub Pages (public repo, Actions workflow) and served
-at **https://hoop-scout.com** — apex canonical, `www` redirects. The domain is
-pinned by the root `CNAME` file; DNS is at the Squarespace registrar (A records →
-`185.199.108–111.153`, `www` CNAME → `ewoutsamyn.github.io`). All asset paths are
-relative, so the site works at the domain root and at the `github.io` subpath
-alike. Absolute URLs (canonical, `og:url`, `og:image`) point at `hoop-scout.com`.
+at **https://hoop-trax.com** — apex canonical, `www` redirects. The domain is
+pinned by the root `CNAME` file. All asset paths are relative, so the site works
+at the domain root and at the `github.io` subpath alike. Absolute URLs
+(canonical, `og:url`, `og:image`) point at `hoop-trax.com`.
+
+**DNS is on Cloudflare, not the registrar** — the domain is *registered* at
+Squarespace but its nameservers are delegated to Cloudflare, where four apex `A`
+records point at GitHub's `185.199.108.153`–`185.199.111.153` and `www` is a
+`CNAME` to `ewoutsamyn.github.io`. This repo's docs previously claimed DNS lived
+at Squarespace directly; it does not, and that error sent one session looking for
+records that were not there. Two Cloudflare-specific traps:
+
+- **A deploy can succeed while the live page stays stale**, if a Cache Rule is
+  doing "Cache Everything" — Cloudflare does not cache HTML by default, so this
+  means a rule exists. Purge the cache. To check whether the deploy itself was
+  fine, hit `https://ewoutsamyn.github.io/HoopScout-Website/`, which bypasses
+  Cloudflare.
+- **A proxied (orange-cloud) record blocks GitHub's TLS certificate issuance**,
+  because Cloudflare intercepts the validation challenge — Pages then shows no
+  certificate and "Enforce HTTPS" is unavailable. Set records to DNS-only until
+  the certificate is issued, then re-proxy with SSL/TLS mode **Full (strict)**.
+  Never **Flexible**: it talks plain HTTP to an origin that redirects to HTTPS,
+  which loops.
 
 ## Brand system (must stay in sync with the app)
 

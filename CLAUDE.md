@@ -41,10 +41,20 @@ CNAME             GitHub Pages custom domain (`hoop-trax.com`). Do not delete.
 ```
 
 **Hosting:** deployed to GitHub Pages (public repo, Actions workflow) and served
-at **https://hoop-trax.com** — apex canonical, `www` redirects. The domain is
-pinned by the root `CNAME` file. All asset paths are relative, so the site works
-at the domain root and at the `github.io` subpath alike. Absolute URLs
-(canonical, `og:url`, `og:image`) point at `hoop-trax.com`.
+at **https://hoop-trax.com** — apex canonical, `www` redirects. All asset paths
+are relative, so the site works at the domain root and at the `github.io` subpath
+alike. Absolute URLs (canonical, `og:url`, `og:image`) point at `hoop-trax.com`.
+
+**Changing the domain takes two steps, not one.** Because this repo builds via
+GitHub Actions (`build_type: workflow`), the `CNAME` file is *not* read back into
+the Pages custom-domain setting — that only happens on legacy branch-based builds.
+So editing `CNAME` alone leaves the new domain answering GitHub's "Site not
+found". You must also set it under Settings → Pages, or
+`gh api -X PUT repos/ewoutsamyn/HoopTrax-Website/pages -f cname=<domain>`. Keep
+the `CNAME` file regardless — deploying without it drops the custom domain.
+Afterwards, **re-run the workflow**: right after a domain change the root path can
+still 404 while `/index.html` serves fine, and a fresh deploy repairs the root
+routing.
 
 **DNS is on Cloudflare, not the registrar** — the domain is *registered* at
 Squarespace but its nameservers are delegated to Cloudflare, where four apex `A`

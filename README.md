@@ -67,9 +67,23 @@ There are two badge pairs to update: the **hero** and the **closing CTA**.
 ## Custom domain
 
 The site is served at **https://hoop-trax.com** (GitHub Pages custom domain).
-The apex `hoop-trax.com` is canonical; `www` redirects to it. The domain is set
-by the root `CNAME` file — don't delete it or the custom domain drops on the
-next deploy.
+The apex `hoop-trax.com` is canonical; `www` redirects to it. Keep the root
+`CNAME` file — deploying without it drops the custom domain.
+
+**The `CNAME` file alone does NOT set the domain here.** This repo deploys via
+GitHub Actions (`build_type: workflow`), and that path does *not* read `CNAME`
+back into the Pages custom-domain setting — only legacy branch-based builds do.
+Changing the domain therefore takes two steps, and doing just the first leaves
+the new domain serving GitHub's "Site not found":
+
+1. commit the new value to `CNAME`, and
+2. set it in **Settings → Pages → Custom domain** (or
+   `gh api -X PUT repos/ewoutsamyn/HoopTrax-Website/pages -f cname=<domain>`).
+
+Then **re-run the deploy workflow**. Immediately after a domain change the root
+path can keep returning "Site not found" while `/index.html` and `/privacy.html`
+serve correctly — a fresh deploy fixes the root routing. That symptom is a
+routing artifact, not a broken deploy.
 
 **DNS runs through Cloudflare, not the registrar.** The domain is *registered*
 at Squarespace, but its nameservers are delegated to Cloudflare

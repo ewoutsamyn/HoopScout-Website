@@ -16,13 +16,12 @@ python -m http.server 8000
 
 ## Deploy it
 
-It's a plain static site — drop the whole folder on any static host:
+**Push to `main`.** The site is hosted on a Cloudflare Worker that is connected
+to this repo and rebuilds itself on every push (see [Hosting](#hosting) below).
+There's nothing to run and no environment variables.
 
-- **Netlify / Vercel:** drag-and-drop the folder, or point it at the repo.
-- **GitHub Pages:** push the folder and enable Pages.
-- **Cloudflare Pages / any web host:** upload as-is.
-
-No environment variables, no server code.
+Locally it's still a plain static site, so any static server (or double-clicking
+`index.html`) previews it exactly as it ships.
 
 ## Add your real screenshots
 
@@ -64,61 +63,30 @@ There are two badge pairs to update: the **hero** and the **closing CTA**.
   AdMob console** — if the domain changes again, update it there too, or the
   link AdMob points at goes dead with no warning from anywhere in this repo.
 
-## Custom domain
+## Hosting
 
-The site is served at **https://hoop-trax.com** (GitHub Pages custom domain).
-The apex `hoop-trax.com` is canonical; `www` redirects to it. Keep the root
-`CNAME` file — deploying without it drops the custom domain.
+The site runs on a **Cloudflare Worker** (`hoopscoutwebsite` — an account-legacy
+name, not the product name) with **Cloudflare Workers Builds** connected to this
+GitHub repo. Every push to `main` makes Cloudflare clone, build and deploy — the
+repo is static HTML with no build config, so the build settings live in the
+Cloudflare dashboard. Served at **https://hoop-trax.com** (apex canonical; `www`
+serves the same site). hoop-scout.com is a second Cloudflare zone pointing at the
+same Worker.
 
-**The `CNAME` file alone does NOT set the domain here.** This repo deploys via
-GitHub Actions (`build_type: workflow`), and that path does *not* read `CNAME`
-back into the Pages custom-domain setting — only legacy branch-based builds do.
-Changing the domain therefore takes two steps, and doing just the first leaves
-the new domain serving GitHub's "Site not found":
+There is **no GitHub Pages, no GitHub Actions workflow, and no `CNAME` file** —
+they were removed when the site moved fully onto the Worker. Don't add them back;
+a second deploy pipeline building the same repo is the clutter that removal
+cleared.
 
-1. commit the new value to `CNAME`, and
-2. set it in **Settings → Pages → Custom domain** (or
-   `gh api -X PUT repos/ewoutsamyn/HoopTrax-Website/pages -f cname=<domain>`).
+**To attach or change a domain**, use the Worker's Domains tab — *not* a `CNAME`
+file or hand-edited DNS records: Cloudflare dashboard → Workers & Pages →
+`hoopscoutwebsite` → **Domains** → Add Domain. Cloudflare creates the routing
+records itself. If it errors with *"hostname already has externally managed DNS
+records"*, delete that hostname's existing A/CNAME records from the zone's DNS
+first, then add it here.
 
-Then **re-run the deploy workflow**. Immediately after a domain change the root
-path can keep returning "Site not found" while `/index.html` and `/privacy.html`
-serve correctly — a fresh deploy fixes the root routing. That symptom is a
-routing artifact, not a broken deploy.
-
-**The host is GitHub Pages. Cloudflare is only a proxy in front of it** — DNS
-plus CDN. Don't reach for Cloudflare Pages / "Workers & Pages"; adding the domain
-there fails with *"hostname already has externally managed DNS records"*, because
-the records already point at GitHub. Every response header says
-`Server: cloudflare`, which makes it look Cloudflare-hosted; it isn't, and a
-GitHub Actions deploy is what publishes changes.
-
-**DNS runs through Cloudflare, not the registrar.** The domain is *registered*
-at Squarespace, but its nameservers are delegated to Cloudflare
-(`dante.ns.cloudflare.com` / `stephane.ns.cloudflare.com`), and the DNS records
-live in the Cloudflare dashboard:
-
-- four apex `A` records → GitHub's `185.199.108.153`, `185.199.109.153`,
-  `185.199.110.153`, `185.199.111.153`
-- `www` `CNAME` → `ewoutsamyn.github.io` (account-scoped, so it is the same
-  value for any domain on this account)
-
-Two consequences of the Cloudflare layer that cost real debugging time on the
-old hoop-scout.com domain:
-
-1. **While a record is proxied (orange cloud), GitHub cannot issue its own TLS
-   certificate** — Cloudflare intercepts the validation challenge, so Pages
-   reports no certificate and "Enforce HTTPS" stays greyed out. To get a real
-   GitHub certificate, set the records to **DNS only** (grey cloud) until Pages
-   issues one and Enforce HTTPS is on, *then* switch to proxied with the
-   Cloudflare SSL/TLS mode set to **Full (strict)**. Never use **Flexible** — it
-   sends plain HTTP to an origin that redirects to HTTPS, producing a redirect
-   loop.
-2. **A proxied Cloudflare zone can serve stale HTML after a deploy.** Cloudflare
-   does not cache HTML by default, so if a deploy succeeds but the live page is
-   unchanged, look for a Cache Rule or Page Rule doing "Cache Everything" and
-   purge the cache. Confirm the deploy itself worked by checking
-   `https://ewoutsamyn.github.io/HoopScout-Website/`, which bypasses Cloudflare
-   entirely.
+**DNS** is on Cloudflare — the domain is registered at Squarespace but its
+nameservers are delegated to Cloudflare (`dante` / `stephane.ns.cloudflare.com`).
 - **Contact:** the footer "Contact" link and the policy use
   `bballsidelineiq@gmail.com`. Change it in `index.html`, `privacy.html` and the
   policy body if that address changes.
